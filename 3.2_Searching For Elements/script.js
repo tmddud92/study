@@ -14,7 +14,7 @@ const hellos = document.getElementsByClassName("hello");
 
 const title = document.getElementsByTagName("h1");
 // 많은 h1중에 원하는 하나만 가지고 오고싶은면 원하는 결과가 아니다.
-// title. 으로 뭔가를 할 수 없기 때문
+// title. 으로 뭔가를 할 수 없기 때문getElementsByClassName
 // title이 title object 자체가 아니고 array기 때문
 
 // element를 가지고 오는 가장 멋진 방법

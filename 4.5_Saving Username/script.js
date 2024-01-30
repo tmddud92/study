@@ -1,3 +1,28 @@
+// 브라우저의 기본 동작을 막는다.(submit 할때 동작을 X)
+// 기본 동작을 멈추고 우리가 원하는 대로 할 수 있게 됨
+// form에 hidden이라는 class 추가
+// 이때 form과 h1 모두 hidden이라는 같은 class을 지니게 됨
+// 우리는 loginInput의 값을 변수에 저장하고
+// 기본적으로 비어있는 h1인 greeting을 가져다가
+// "hello username"이라는 텍스트를 넣어줌
+// 이때 `${}`를 활용해서 string 안에 변수값을 넣고
+// h1에서 hidden이라는 class를 삭제해줌
+// 그러면 hidden class명을 갖고 있는건 form 뿐
+
+// value를 저장하는 방법(user에게 매번 질문하기 번거로워서)
+// 데이터를 저장해주는 API는 local storage.(나중에 가져다 쓸 수 있다)
+// local storage에 뭐가 들어있는지 보고싶다면 개발자도구를 이용하면됨
+// application으로 가서, local storage로 이동.
+
+// setItem을 이용하면 local storage에 정보를 저장할 수 있다.
+// localStorage.setItem("key", "value");
+
+// getItem을 이용해서 정보를 불러올 수 있다.
+// localStorage.getItem("key"); -> "value"
+
+// 필요한 경우 저장된 값을 지울 수도 있다.
+// localStorage.removeItem("key");
+
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
 const greeting = document.querySelector("#greeting");
@@ -8,6 +33,7 @@ function onLoginSubmit(event) {
     event.preventDefault();
     loginForm.classList.add(HIDDEN_CLASSNAME);
     const username = loginInput.value;
+    localStorage.setItem("username", username);
     greeting.innerText = `Hello ${username}`;
     greeting.classList.remove(HIDDEN_CLASSNAME);
 }

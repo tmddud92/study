@@ -18,6 +18,8 @@ const colors = [
 
 function onClick(event) {
     ctx.beginPath();
+    // 새 path를 만들어주자.
+    // path의style을 바꾼다해도 이전 path는 영향을 받지 않는다.
     ctx.moveTo(800, 800);
     const color = colors[Math.floor(Math.random() * colors.length)];
     ctx.strokeStyle = color;
